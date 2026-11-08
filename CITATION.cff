@@ -1,0 +1,15 @@
+cff-version: 1.2.0
+message: "If you use this data set, cite it as below. It is a derived data set: the original line list and its modification for teaching are separate contributions, and both are credited."
+title: "Measles in Sierra Leone, 2019 to 2023: a semi-synthetic teaching file"
+type: dataset
+authors:
+  - name: "Sierra Leone Field Epidemiology Training Program"
+  - name: "The Fieldwork project (digital-twin-ph)"
+repository-code: "https://github.com/digital-twin-ph/example-2019-sierra-leone-measles"
+abstract: "2,606 suspected measles cases seen in Sierra Leone from 2019 to 2023, from a line list the Sierra Leone FETP produced, used with the FETP's agreement for the development of distributable training materials. Modified for use on a public teaching repository: addresses and date of birth removed, whole records swapped within district and month, each visit moved by up to a week, dates given by week. No row is a person."
+keywords:
+  - measles
+  - Sierra Leone
+  - field epidemiology training
+  - semi-synthetic data
+  - de-identification

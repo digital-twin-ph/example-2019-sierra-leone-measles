@@ -63,7 +63,19 @@ For teaching: an epidemic curve, cases by district, the share meeting the case d
 whether facility names can be matched to an open facility list. Maps should show counts by district, or by facility
 only where a count is large enough not to point at one child.
 
-## Terms
+## Source, terms and credit
 
-Produced by the Sierra Leone FETP for training. **The terms under which it may be shared beyond training are not
-yet stated here.**
+**Original data:** a measles line list produced by the Sierra Leone Field Epidemiology Training Program (FETP).
+
+**Terms:** used with the Sierra Leone FETP's agreement for the development of distributable training materials. **This
+data set has been modified for use on a public teaching repository**: de-identified and made semi-synthetic, as
+described above. Its use is for teaching and training; no row is a person and the file is not surveillance data.
+
+**Credit.** This is a derived data set with two contributions:
+
+| Contribution | By |
+| --- | --- |
+| The original line list | Sierra Leone Field Epidemiology Training Program |
+| De-identification, and making it semi-synthetic (`scripts/make_semisynthetic.py`) | The Fieldwork project, [digital-twin-ph](https://github.com/digital-twin-ph) |
+
+Cite both, as [CITATION.cff](CITATION.cff) lists them.
