@@ -25,6 +25,26 @@ The swaps and moves use a fixed seed, so the script gives the same file every ti
 status and case definition over the whole file. **Approximate, by design:** counts by week. **Not true of any child:**
 any one row's combination of details.
 
+## How close it is to the original
+
+![Weekly cases by date seen, original and semi-synthetic: the two lines track each other through a small rise in late 2021, a sharp wave in early 2022 and the largest wave in early 2023; the semi-synthetic peaks are lower and spread by about a week.](docs/epicurve-compare.svg)
+
+| Comparison | Correlation | Cases in another period | Peak, original and semi-synthetic |
+| --- | --- | --- | --- |
+| Weekly, by date seen | 0.968 | 11.2% | 13 Feb 2023 (92); 6 Feb 2023 (81) |
+| Weekly, four-week rolling mean | 0.996 | 4.4% | 6 Mar 2023 (80); 20 Feb 2023 (76) |
+| Weekly, by onset | 0.956 | 12.5% | 30 Jan 2023 (75); 30 Jan 2023 (74) |
+| Monthly | 0.983 | 6.5% | Mar 2023 (313); Feb 2023 (303) |
+| District and month | 0.972 | 8.8% | Western Area Urban: Mar 2023 (138); Feb 2023 (120) |
+| District, whole period | identical | 0% | |
+| Facility and year | 1.000 | 0.9% | |
+| Age band and year | 1.000 | 1.0% | |
+
+The two waves keep their timing and size, and where cases were and who they were is kept. Weekly peaks are lower and
+spread by about a week, which is the move doing its work: an exercise on the exact peak week or a weekly alert
+threshold would answer differently from the original; one by onset or by month would not. The chart is drawn from
+weekly counts only.
+
 ## The file
 
 [data/measles-sierra-leone-semisynthetic.csv](data/measles-sierra-leone-semisynthetic.csv): 2,606 rows, 30 columns,
