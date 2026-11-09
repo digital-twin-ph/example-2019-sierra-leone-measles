@@ -844,9 +844,20 @@
      "select": "map"
     },
     {
+     "click": "#configure-step",
+     "label": "Configure…",
+     "opens": "Map"
+    },
+    {
      "choose": "[data-pin-class]",
      "label": "Pin class for Find health facilities",
-     "value": "cases"
+     "value": "cases",
+     "dialog": "Map"
+    },
+    {
+     "click": "#map-config #config-apply",
+     "label": "Apply",
+     "dialog": "Map"
     },
     {
      "run": true
