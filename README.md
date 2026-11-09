@@ -59,6 +59,17 @@ definition.
 empty for most rows (a lab result for 570 of 2,606); one age over 100 comes from a date of birth entered in 1904; one onset
 falls before 2019, in 2017. These are kept as found, to be named as data quality findings, not repaired.
 
+**The districts, for rates and maps:**
+
+- [data/districts-cod-ab.geojson](data/districts-cod-ab.geojson): Sierra Leone's 16 districts, as OCHA's Common
+  Operational Dataset of administrative boundaries (COD-AB) publishes them, named in `adm2_name` and coded in
+  `adm2_pcode`. OCHA writes Falaba as "Fabala". The names are as published, not corrected.
+- [data/district-population.csv](data/district-population.csv): each district's people, by OCHA's name: WorldPop's
+  modelled estimates for 2019 to 2023, summed over the district by
+  [scripts/district_population.py](scripts/district_population.py), and the 2021 Mid-Term Population and Housing
+  Census totals beside them for comparison. Across the country WorldPop's 2021 estimate is 5.8% above the census;
+  by district, from 7.2% below (Western Area Urban) to 15.1% above (Koinadugu).
+
 ## Workflows
 
 Open [fieldwork-project.json.gz](fieldwork-project.json.gz) in Fieldwork, or build it from an empty canvas by following
@@ -69,9 +80,9 @@ a fixed commit.
 | --- | --- |
 | How did the outbreak unfold, month by month? | Suspected cases by month of onset, 2019 to 2023: two waves, early 2022 and early 2023. Cases with no onset (389) or one outside the visits' span (2) are left out by Select rows, which says how many. By month, because five years of weeks is more than a chart here draws |
 | Where were the cases seen? | The facility each case names, found in GRID3's register of Sierra Leone's health facilities (CC BY 4.0) by Find health facilities from a list. Facilities with fewer than ten cases are counted, not mapped; the rest are coloured by band, 10 to 49 or 50 or more |
+| Where were cases most frequent for the people living there? | Cases per 100,000 people by district, over WorldPop's 2021 estimate, on OCHA's districts. The line list writes "Bo District" and OCHA "Bo", and Falaba is "Fabala": Relate drops the word District and allows for spelling, and shows each match before it is applied. Cases with no residential district are left out of the rates, and Relate says how many |
 
-**Not yet:** cases by district on a map, and the case classification by WHO's definition, which waits on the FETP's
-data dictionary for one column.
+**Not yet:** the case classification by WHO's definition, which waits on the FETP's data dictionary for one column.
 
 ## Use
 
@@ -95,3 +106,11 @@ described above. Its use is for teaching and training; no row is a person and th
 | De-identification, and making it semi-synthetic (`scripts/make_semisynthetic.py`) | The Fieldwork project, [digital-twin-ph](https://github.com/digital-twin-ph) |
 
 Cite both, as [CITATION.cff](CITATION.cff) lists them.
+
+**The district files:**
+
+| Data | Source | Terms |
+| --- | --- | --- |
+| District boundaries and names | OCHA, Sierra Leone Subnational Administrative Boundaries (COD-AB, `cod-ab-sle`), on the Humanitarian Data Exchange | CC BY-IGO |
+| Population estimates, 2019 to 2023 | WorldPop, Global2 R2025A v1, constrained, 100 m population counts, [doi:10.5258/SOTON/WP00839](https://doi.org/10.5258/SOTON/WP00839). WorldPop calls R2025A an alpha version | CC BY 4.0 |
+| 2021 census totals | Source: STATISTICS SIERRA LEONE. 2021 Mid-Term Population and Housing Census, final results tables by district | Statistics Sierra Leone's open terms, with this attribution |
