@@ -47,15 +47,31 @@ weekly counts only.
 
 ## The file
 
-[data/measles-sierra-leone-semisynthetic.csv](data/measles-sierra-leone-semisynthetic.csv): 2,606 rows, 30 columns,
-one per suspected measles case seen from January 2019 to December 2023, most of them in 2022 and 2023. Columns are as
-the source's export named them: an organisation unit (the facility, by name), residential district, age in years, sex,
+[data/measles-sierra-leone-semisynthetic.csv](data/measles-sierra-leone-semisynthetic.csv): 2,606 rows, 31 columns,
+one per suspected measles case seen from January 2019 to December 2023, most of them in 2022 and 2023. The first,
+**Case number** (SL-0001 to SL-2606), is added here, in an order drawn from its own seed, so two cases with the same
+details can be told apart; it says nothing about where a record stood in the original. The rest are as the source's
+export named them: an organisation unit (the facility, by name), residential district, age in years, sex,
 dates of onset, being seen, specimen and result, symptoms, routine doses, lab result and whether the case met the
 definition.
 
 **What it says about itself, as found:** about 18% of rows have no residential district; most clinical fields are
 empty for most rows (a lab result for 570 of 2,606); one age over 100 comes from a date of birth entered in 1904; one onset
 falls before 2019, in 2017. These are kept as found, to be named as data quality findings, not repaired.
+
+## Workflows
+
+Open [fieldwork-project.json.gz](fieldwork-project.json.gz) in Fieldwork, or build it from an empty canvas by following
+[manual.json](manual.json), which Fieldwork shows in its Manual tab. Each reads the line list from this repository at
+a fixed commit.
+
+| Workflow | What it shows |
+| --- | --- |
+| How did the outbreak unfold, month by month? | Suspected cases by month of onset, 2019 to 2023: two waves, early 2022 and early 2023. Cases with no onset (389) or one outside the visits' span (2) are left out by Select rows, which says how many. By month, because five years of weeks is more than a chart here draws |
+| Where were the cases seen? | The facility each case names, found in GRID3's register of Sierra Leone's health facilities (CC BY 4.0) by Find health facilities from a list. Facilities with fewer than ten cases are counted, not mapped; the rest are coloured by band, 10 to 49 or 50 or more |
+
+**Not yet:** cases by district on a map, and the case classification by WHO's definition, which waits on the FETP's
+data dictionary for one column.
 
 ## Use
 
