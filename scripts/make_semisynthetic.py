@@ -91,6 +91,14 @@ def main(source, target):
                 out[i][c] = monday(moved + datetime.timedelta(days=offset)) if moved and offset is not None else ''
             out[i][SEEN] = monday(moved)
     rows = out
+    # A CASE NUMBER, as a line list carries one: the original's identifiers were removed, and without one two cases with
+    # the same details cannot be told apart. Numbered in an order drawn from its own seed, not the file's, so a number
+    # says nothing about where a record stood in the original. Every other value is as above.
+    order = list(range(len(rows)))
+    random.Random(SEED + 1).shuffle(order)
+    for number, i in enumerate(order, 1):
+        rows[i] = {'Case number': f'SL-{number:04d}', **rows[i]}
+    columns = ['Case number'] + columns
     with open(target, 'w', newline='', encoding='utf-8') as f:
         writer = csv.DictWriter(f, fieldnames=columns, lineterminator='\n')
         writer.writeheader()
