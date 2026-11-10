@@ -261,6 +261,11 @@
      "value": "Epidemic curve"
     },
     {
+     "click": "#configure-step",
+     "label": "Configure…",
+     "opens": "Chart"
+    },
+    {
      "fill": "chart-title",
      "label": "Chart title",
      "value": "Suspected measles cases by month of onset, Sierra Leone, 2019 to 2023"
@@ -279,6 +284,11 @@
      "fill": "chart-source-note",
      "label": "Source / method note",
      "value": "Sierra Leone FETP line list, de-identified and made semi-synthetic for teaching (example-2019-sierra-leone-measles). Suspected cases, not confirmed ones."
+    },
+    {
+     "click": "#config-apply",
+     "label": "Apply",
+     "dialog": "Chart"
     },
     {
      "run": true
