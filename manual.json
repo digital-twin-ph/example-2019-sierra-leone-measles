@@ -57,7 +57,7 @@
     {
      "fill": "table-url",
      "label": "URL of a CSV, Stata file or zip",
-     "value": "https://raw.githubusercontent.com/digital-twin-ph/example-2019-sierra-leone-measles/3e5c7312d6e570ed1ec75d46689a5cf29f2a23d2/data/measles-sierra-leone-semisynthetic.csv",
+     "value": "https://raw.githubusercontent.com/digital-twin-ph/example-2019-sierra-leone-measles/5afe80c9d30b02e53fa3cc682be8ce10be74ef5a/data/measles-sierra-leone-semisynthetic.csv",
      "dialog": "Tabular data"
     },
     {
@@ -360,7 +360,7 @@
     {
      "fill": "table-url",
      "label": "URL of a CSV, Stata file or zip",
-     "value": "https://raw.githubusercontent.com/digital-twin-ph/example-2019-sierra-leone-measles/3e5c7312d6e570ed1ec75d46689a5cf29f2a23d2/data/measles-sierra-leone-semisynthetic.csv",
+     "value": "https://raw.githubusercontent.com/digital-twin-ph/example-2019-sierra-leone-measles/5afe80c9d30b02e53fa3cc682be8ce10be74ef5a/data/measles-sierra-leone-semisynthetic.csv",
      "dialog": "Tabular data"
     },
     {
@@ -947,7 +947,7 @@
     {
      "fill": "table-url",
      "label": "URL of a CSV, Stata file or zip",
-     "value": "https://raw.githubusercontent.com/digital-twin-ph/example-2019-sierra-leone-measles/3e5c7312d6e570ed1ec75d46689a5cf29f2a23d2/data/measles-sierra-leone-semisynthetic.csv",
+     "value": "https://raw.githubusercontent.com/digital-twin-ph/example-2019-sierra-leone-measles/5afe80c9d30b02e53fa3cc682be8ce10be74ef5a/data/measles-sierra-leone-semisynthetic.csv",
      "dialog": "Tabular data"
     },
     {
@@ -1024,7 +1024,7 @@
     {
      "fill": "table-url",
      "label": "URL of a CSV, Stata file or zip",
-     "value": "https://raw.githubusercontent.com/digital-twin-ph/example-2019-sierra-leone-measles/3e5c7312d6e570ed1ec75d46689a5cf29f2a23d2/data/district-population.csv",
+     "value": "https://raw.githubusercontent.com/digital-twin-ph/example-2019-sierra-leone-measles/5afe80c9d30b02e53fa3cc682be8ce10be74ef5a/data/district-population.csv",
      "dialog": "Tabular data"
     },
     {
@@ -1495,7 +1495,7 @@
     {
      "fill": "table-url",
      "label": "URL of a CSV, Stata file or zip",
-     "value": "https://raw.githubusercontent.com/digital-twin-ph/example-2019-sierra-leone-measles/3e5c7312d6e570ed1ec75d46689a5cf29f2a23d2/data/measles-sierra-leone-semisynthetic.csv",
+     "value": "https://raw.githubusercontent.com/digital-twin-ph/example-2019-sierra-leone-measles/5afe80c9d30b02e53fa3cc682be8ce10be74ef5a/data/measles-sierra-leone-semisynthetic.csv",
      "dialog": "Tabular data"
     },
     {
