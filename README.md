@@ -81,6 +81,7 @@ a fixed commit.
 | How did the outbreak unfold, month by month? | Suspected cases by month of onset, 2019 to 2023: two waves, early 2022 and early 2023. Cases with no onset (389) or one outside the visits' span (2) are left out by Select rows, which says how many. By month, because five years of weeks is more than a chart here draws |
 | Where were the cases seen? | The facility each case names, found in GRID3's register of Sierra Leone's health facilities (CC BY 4.0) by Find health facilities from a list. Facilities with fewer than ten cases are counted, not mapped; the rest are coloured by band, 10 to 49 or 50 or more |
 | Where were cases most frequent for the people living there? | Cases per 100,000 people by district, over WorldPop's 2021 estimate, on OCHA's districts. The line list writes "Bo District" and OCHA "Bo", and Falaba is "Fabala": Relate drops the word District and allows for spelling, and shows each match before it is applied. Cases with no residential district are left out of the rates, and Relate says how many |
+| Who were the cases? | Cases by sex, and by age band and sex in one panel per sex: 0 (under one year), 1 to 4, 5 to 9, 10 to 14, 15 and over, as Apply ruleset bands the age in whole years. By sex: 1,310 male, 1,291 female, 5 not recorded. By band: 546, 1,329, 458, 102 and 164; the 7 cases with no age get no band, and are shown as such |
 
 **Not yet:** the case classification by WHO's definition, which waits on the FETP's data dictionary for one column.
 

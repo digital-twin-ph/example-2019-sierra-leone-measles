@@ -213,10 +213,21 @@
      "select": "weekly"
     },
     {
+     "click": "#configure-step",
+     "label": "Configure…",
+     "opens": "Cases by period"
+    },
+    {
      "choose": "series-input",
      "label": "Records arrive as",
      "value": "table",
-     "shown": "a table, each row a count"
+     "shown": "a table, each row a count",
+     "dialog": "Cases by period"
+    },
+    {
+     "click": "#config-apply",
+     "label": "Apply",
+     "dialog": "Cases by period"
     },
     {
      "connect": {
@@ -229,14 +240,21 @@
      "select": "weekly"
     },
     {
+     "click": "#configure-step",
+     "label": "Configure…",
+     "opens": "Cases by period"
+    },
+    {
      "fill": "series-date",
-     "label": "Event date attribute",
-     "value": "Onset/Start date"
+     "label": "Date column",
+     "value": "Onset/Start date",
+     "dialog": "Cases by period"
     },
     {
      "choose": "series-kind",
      "label": "Which date is it?",
-     "value": "onset"
+     "value": "onset",
+     "dialog": "Cases by period"
     },
     {
      "note": "Five years is about 260 weeks, more than a chart here draws; count by month, as multi-year measles surveillance is usually shown. Every date in the file was set to a Monday, so a week starting Monday is the finer choice for one year."
@@ -245,7 +263,13 @@
      "choose": "series-period",
      "label": "Period",
      "value": "month",
-     "shown": "month"
+     "shown": "month",
+     "dialog": "Cases by period"
+    },
+    {
+     "click": "#config-apply",
+     "label": "Apply",
+     "dialog": "Cases by period"
     },
     {
      "click": "#add-series-chart",
@@ -1431,6 +1455,616 @@
     {
      "see": "each of the 16 districts shaded by its cases per 100,000, the key printing its classes",
      "check": "Cases per 100,000 by district"
+    }
+   ]
+  },
+  {
+   "name": "Who were the cases?",
+   "steps": [
+    {
+     "click": "#add-workflow",
+     "label": "Add workflow",
+     "view": "workflow"
+    },
+    {
+     "fill": "workflow-name-edit",
+     "view": "project",
+     "label": "This workflow’s name — the question it answers",
+     "value": "Who were the cases?"
+    },
+    {
+     "note": "Age in whole years and sex, as the file records them. 7 cases have no age and 5 no sex: they are counted, not dropped."
+    },
+    {
+     "add": "table_input",
+     "as": "cases"
+    },
+    {
+     "select": "cases"
+    },
+    {
+     "click": "#open-table",
+     "label": "Configure…",
+     "opens": "Tabular data"
+    },
+    {
+     "click": "#table-remote summary",
+     "label": "Or fetch from a URL",
+     "dialog": "Tabular data"
+    },
+    {
+     "fill": "table-url",
+     "label": "URL of a CSV, Stata file or zip",
+     "value": "https://raw.githubusercontent.com/digital-twin-ph/example-2019-sierra-leone-measles/3e5c7312d6e570ed1ec75d46689a5cf29f2a23d2/data/measles-sierra-leone-semisynthetic.csv",
+     "dialog": "Tabular data"
+    },
+    {
+     "click": "#table-fetch",
+     "label": "Fetch",
+     "dialog": "Tabular data"
+    },
+    {
+     "choose": "table-shape",
+     "label": "Shape of the file",
+     "value": "long",
+     "shown": "Long",
+     "dialog": "Tabular data"
+    },
+    {
+     "choose": "table-value",
+     "label": "Value column",
+     "value": "Age (years)",
+     "dialog": "Tabular data"
+    },
+    {
+     "click": "#table-keys-choose",
+     "label": "Choose key columns…",
+     "dialog": "Tabular data",
+     "opens": "Key columns"
+    },
+    {
+     "fill": "table-keys-paste",
+     "label": "Columns to keep, pasted or typed",
+     "value": "Case number, Organisation unit name, Residential District, Sex, Onset/Start date, Date seen at Health Facility/Community, LRS Specimen test 01 - result",
+     "dialog": "Key columns"
+    },
+    {
+     "click": "#table-keys-keep",
+     "label": "Keep these",
+     "dialog": "Key columns"
+    },
+    {
+     "click": "#table-keys-done",
+     "label": "Done",
+     "dialog": "Key columns"
+    },
+    {
+     "fill": "table-unit",
+     "label": "Unit of the value (entered by you)",
+     "value": "years",
+     "dialog": "Tabular data"
+    },
+    {
+     "click": "#table-save",
+     "label": "Apply",
+     "dialog": "Tabular data"
+    },
+    {
+     "note": "Band each case by age, in the bands measles surveillance uses: 0 (under one year), 1 to 4, 5 to 9, 10 to 14, 15 and over."
+    },
+    {
+     "add": "apply_ruleset",
+     "as": "ages"
+    },
+    {
+     "select": "ages"
+    },
+    {
+     "click": "#configure-step",
+     "label": "Configure…",
+     "opens": "Apply ruleset"
+    },
+    {
+     "choose": "ruleset-choice",
+     "label": "Ruleset",
+     "value": "authored",
+     "shown": "Write rules for this step",
+     "dialog": "Apply ruleset"
+    },
+    {
+     "click": "#ruleset-config #config-apply",
+     "label": "Apply",
+     "dialog": "Apply ruleset"
+    },
+    {
+     "choose": "ruleset-records",
+     "label": "Records arrive as",
+     "value": "table",
+     "shown": "A table",
+     "dialog": "Apply ruleset"
+    },
+    {
+     "click": "#rule-editor #config-apply",
+     "label": "Apply",
+     "dialog": "Apply ruleset"
+    },
+    {
+     "connect": {
+      "from": "cases",
+      "to": "ages",
+      "port": "subjects"
+     }
+    },
+    {
+     "select": "ages"
+    },
+    {
+     "click": "#configure-step",
+     "label": "Configure…",
+     "opens": "Apply ruleset"
+    },
+    {
+     "fill": "[aria-label=\"Unit for Age (years)\"]",
+     "label": "Unit for Age (years)",
+     "value": "years",
+     "dialog": "Apply ruleset"
+    },
+    {
+     "click": "#rule-editor-add",
+     "label": "+ Add a rule",
+     "dialog": "Apply ruleset"
+    },
+    {
+     "choose": "[data-rule=\"0\"][data-group=\"0\"][data-condition=\"0\"][data-part=\"field\"]",
+     "label": "Field",
+     "value": "fwa:AgeYears",
+     "shown": "Age (years)",
+     "dialog": "Apply ruleset"
+    },
+    {
+     "choose": "[data-rule=\"0\"][data-group=\"0\"][data-condition=\"0\"][data-part=\"comparator\"]",
+     "label": "Comparator",
+     "value": "lessThan",
+     "shown": "is less than",
+     "dialog": "Apply ruleset"
+    },
+    {
+     "fill": "[data-rule=\"0\"][data-group=\"0\"][data-condition=\"0\"][data-part=\"value\"]",
+     "label": "Value",
+     "value": "1",
+     "dialog": "Apply ruleset"
+    },
+    {
+     "fill": "[data-rule=\"0\"][data-then=\"0\"][data-part=\"predicate\"]",
+     "label": "Conclusion name",
+     "value": "age_band",
+     "dialog": "Apply ruleset"
+    },
+    {
+     "fill": "[data-rule=\"0\"][data-then=\"0\"][data-part=\"conclusion\"]",
+     "label": "Conclusion value",
+     "value": "0",
+     "dialog": "Apply ruleset"
+    },
+    {
+     "click": "#rule-editor-add",
+     "label": "+ Add a rule",
+     "dialog": "Apply ruleset"
+    },
+    {
+     "choose": "[data-rule=\"1\"][data-group=\"0\"][data-condition=\"0\"][data-part=\"field\"]",
+     "label": "Field",
+     "value": "fwa:AgeYears",
+     "shown": "Age (years)",
+     "dialog": "Apply ruleset"
+    },
+    {
+     "choose": "[data-rule=\"1\"][data-group=\"0\"][data-condition=\"0\"][data-part=\"comparator\"]",
+     "label": "Comparator",
+     "value": "notLessThan",
+     "shown": "is at least",
+     "dialog": "Apply ruleset"
+    },
+    {
+     "fill": "[data-rule=\"1\"][data-group=\"0\"][data-condition=\"0\"][data-part=\"value\"]",
+     "label": "Value",
+     "value": "1",
+     "dialog": "Apply ruleset"
+    },
+    {
+     "click": "[data-rule=\"1\"][data-group=\"0\"][data-part=\"add-condition\"]",
+     "label": "+ and",
+     "dialog": "Apply ruleset"
+    },
+    {
+     "choose": "[data-rule=\"1\"][data-group=\"0\"][data-condition=\"1\"][data-part=\"field\"]",
+     "label": "Field",
+     "value": "fwa:AgeYears",
+     "shown": "Age (years)",
+     "dialog": "Apply ruleset"
+    },
+    {
+     "choose": "[data-rule=\"1\"][data-group=\"0\"][data-condition=\"1\"][data-part=\"comparator\"]",
+     "label": "Comparator",
+     "value": "lessThan",
+     "shown": "is less than",
+     "dialog": "Apply ruleset"
+    },
+    {
+     "fill": "[data-rule=\"1\"][data-group=\"0\"][data-condition=\"1\"][data-part=\"value\"]",
+     "label": "Value",
+     "value": "5",
+     "dialog": "Apply ruleset"
+    },
+    {
+     "fill": "[data-rule=\"1\"][data-then=\"0\"][data-part=\"predicate\"]",
+     "label": "Conclusion name",
+     "value": "age_band",
+     "dialog": "Apply ruleset"
+    },
+    {
+     "fill": "[data-rule=\"1\"][data-then=\"0\"][data-part=\"conclusion\"]",
+     "label": "Conclusion value",
+     "value": "1 to 4",
+     "dialog": "Apply ruleset"
+    },
+    {
+     "click": "#rule-editor-add",
+     "label": "+ Add a rule",
+     "dialog": "Apply ruleset"
+    },
+    {
+     "choose": "[data-rule=\"2\"][data-group=\"0\"][data-condition=\"0\"][data-part=\"field\"]",
+     "label": "Field",
+     "value": "fwa:AgeYears",
+     "shown": "Age (years)",
+     "dialog": "Apply ruleset"
+    },
+    {
+     "choose": "[data-rule=\"2\"][data-group=\"0\"][data-condition=\"0\"][data-part=\"comparator\"]",
+     "label": "Comparator",
+     "value": "notLessThan",
+     "shown": "is at least",
+     "dialog": "Apply ruleset"
+    },
+    {
+     "fill": "[data-rule=\"2\"][data-group=\"0\"][data-condition=\"0\"][data-part=\"value\"]",
+     "label": "Value",
+     "value": "5",
+     "dialog": "Apply ruleset"
+    },
+    {
+     "click": "[data-rule=\"2\"][data-group=\"0\"][data-part=\"add-condition\"]",
+     "label": "+ and",
+     "dialog": "Apply ruleset"
+    },
+    {
+     "choose": "[data-rule=\"2\"][data-group=\"0\"][data-condition=\"1\"][data-part=\"field\"]",
+     "label": "Field",
+     "value": "fwa:AgeYears",
+     "shown": "Age (years)",
+     "dialog": "Apply ruleset"
+    },
+    {
+     "choose": "[data-rule=\"2\"][data-group=\"0\"][data-condition=\"1\"][data-part=\"comparator\"]",
+     "label": "Comparator",
+     "value": "lessThan",
+     "shown": "is less than",
+     "dialog": "Apply ruleset"
+    },
+    {
+     "fill": "[data-rule=\"2\"][data-group=\"0\"][data-condition=\"1\"][data-part=\"value\"]",
+     "label": "Value",
+     "value": "10",
+     "dialog": "Apply ruleset"
+    },
+    {
+     "fill": "[data-rule=\"2\"][data-then=\"0\"][data-part=\"predicate\"]",
+     "label": "Conclusion name",
+     "value": "age_band",
+     "dialog": "Apply ruleset"
+    },
+    {
+     "fill": "[data-rule=\"2\"][data-then=\"0\"][data-part=\"conclusion\"]",
+     "label": "Conclusion value",
+     "value": "5 to 9",
+     "dialog": "Apply ruleset"
+    },
+    {
+     "click": "#rule-editor-add",
+     "label": "+ Add a rule",
+     "dialog": "Apply ruleset"
+    },
+    {
+     "choose": "[data-rule=\"3\"][data-group=\"0\"][data-condition=\"0\"][data-part=\"field\"]",
+     "label": "Field",
+     "value": "fwa:AgeYears",
+     "shown": "Age (years)",
+     "dialog": "Apply ruleset"
+    },
+    {
+     "choose": "[data-rule=\"3\"][data-group=\"0\"][data-condition=\"0\"][data-part=\"comparator\"]",
+     "label": "Comparator",
+     "value": "notLessThan",
+     "shown": "is at least",
+     "dialog": "Apply ruleset"
+    },
+    {
+     "fill": "[data-rule=\"3\"][data-group=\"0\"][data-condition=\"0\"][data-part=\"value\"]",
+     "label": "Value",
+     "value": "10",
+     "dialog": "Apply ruleset"
+    },
+    {
+     "click": "[data-rule=\"3\"][data-group=\"0\"][data-part=\"add-condition\"]",
+     "label": "+ and",
+     "dialog": "Apply ruleset"
+    },
+    {
+     "choose": "[data-rule=\"3\"][data-group=\"0\"][data-condition=\"1\"][data-part=\"field\"]",
+     "label": "Field",
+     "value": "fwa:AgeYears",
+     "shown": "Age (years)",
+     "dialog": "Apply ruleset"
+    },
+    {
+     "choose": "[data-rule=\"3\"][data-group=\"0\"][data-condition=\"1\"][data-part=\"comparator\"]",
+     "label": "Comparator",
+     "value": "lessThan",
+     "shown": "is less than",
+     "dialog": "Apply ruleset"
+    },
+    {
+     "fill": "[data-rule=\"3\"][data-group=\"0\"][data-condition=\"1\"][data-part=\"value\"]",
+     "label": "Value",
+     "value": "15",
+     "dialog": "Apply ruleset"
+    },
+    {
+     "fill": "[data-rule=\"3\"][data-then=\"0\"][data-part=\"predicate\"]",
+     "label": "Conclusion name",
+     "value": "age_band",
+     "dialog": "Apply ruleset"
+    },
+    {
+     "fill": "[data-rule=\"3\"][data-then=\"0\"][data-part=\"conclusion\"]",
+     "label": "Conclusion value",
+     "value": "10 to 14",
+     "dialog": "Apply ruleset"
+    },
+    {
+     "click": "#rule-editor-add",
+     "label": "+ Add a rule",
+     "dialog": "Apply ruleset"
+    },
+    {
+     "choose": "[data-rule=\"4\"][data-group=\"0\"][data-condition=\"0\"][data-part=\"field\"]",
+     "label": "Field",
+     "value": "fwa:AgeYears",
+     "shown": "Age (years)",
+     "dialog": "Apply ruleset"
+    },
+    {
+     "choose": "[data-rule=\"4\"][data-group=\"0\"][data-condition=\"0\"][data-part=\"comparator\"]",
+     "label": "Comparator",
+     "value": "notLessThan",
+     "shown": "is at least",
+     "dialog": "Apply ruleset"
+    },
+    {
+     "fill": "[data-rule=\"4\"][data-group=\"0\"][data-condition=\"0\"][data-part=\"value\"]",
+     "label": "Value",
+     "value": "15",
+     "dialog": "Apply ruleset"
+    },
+    {
+     "fill": "[data-rule=\"4\"][data-then=\"0\"][data-part=\"predicate\"]",
+     "label": "Conclusion name",
+     "value": "age_band",
+     "dialog": "Apply ruleset"
+    },
+    {
+     "fill": "[data-rule=\"4\"][data-then=\"0\"][data-part=\"conclusion\"]",
+     "label": "Conclusion value",
+     "value": "15 and over",
+     "dialog": "Apply ruleset"
+    },
+    {
+     "click": "#rule-editor #config-apply",
+     "label": "Apply",
+     "dialog": "Apply ruleset"
+    },
+    {
+     "add": "table_output",
+     "as": "banded"
+    },
+    {
+     "connect": {
+      "from": "ages",
+      "to": "banded",
+      "port": "table"
+     }
+    },
+    {
+     "select": "banded"
+    },
+    {
+     "fill": "table-label",
+     "label": "Results tab name",
+     "value": "Each case with its age band"
+    },
+    {
+     "run": true
+    },
+    {
+     "note": "Count the cases by age band and sex, and draw one panel per sex."
+    },
+    {
+     "add": "group_table",
+     "as": "byAgeSex"
+    },
+    {
+     "connect": {
+      "from": "ages",
+      "to": "byAgeSex",
+      "port": "records"
+     }
+    },
+    {
+     "select": "byAgeSex"
+    },
+    {
+     "click": "#configure-step",
+     "label": "Configure…",
+     "opens": "Total within groups"
+    },
+    {
+     "tick": "group-keep",
+     "label": "Key columns to keep",
+     "values": [
+      "age_band",
+      "Sex"
+     ],
+     "dialog": "Total within groups"
+    },
+    {
+     "choose": "group-aggregate",
+     "label": "Aggregate",
+     "value": "count",
+     "shown": "Count rows",
+     "dialog": "Total within groups"
+    },
+    {
+     "click": "#config-apply",
+     "label": "Apply",
+     "dialog": "Total within groups"
+    },
+    {
+     "add": "chart_output",
+     "as": "profile"
+    },
+    {
+     "connect": {
+      "from": "byAgeSex",
+      "to": "profile",
+      "port": "records"
+     }
+    },
+    {
+     "select": "profile"
+    },
+    {
+     "fill": "chart-label",
+     "label": "Results tab name",
+     "value": "Cases by age and sex"
+    },
+    {
+     "click": "#configure-step",
+     "label": "Configure…",
+     "opens": "Chart"
+    },
+    {
+     "choose": "chart-key-column",
+     "label": "Category column",
+     "value": "age_band",
+     "dialog": "Chart"
+    },
+    {
+     "choose": "chart-panels-by",
+     "label": "One panel per",
+     "value": "Sex",
+     "dialog": "Chart"
+    },
+    {
+     "fill": "chart-title",
+     "label": "Chart title",
+     "value": "Suspected measles cases by age band and sex, Sierra Leone, 2019 to 2023",
+     "dialog": "Chart"
+    },
+    {
+     "fill": "chart-x-axis",
+     "label": "Horizontal axis label",
+     "value": "Age band (years)",
+     "dialog": "Chart"
+    },
+    {
+     "fill": "chart-source-note",
+     "label": "Source / method note",
+     "value": "Sierra Leone FETP line list, de-identified and made semi-synthetic for teaching (example-2019-sierra-leone-measles). Age in whole years and sex as recorded; a blank is its own group.",
+     "dialog": "Chart"
+    },
+    {
+     "click": "#config-apply",
+     "label": "Apply",
+     "dialog": "Chart"
+    },
+    {
+     "note": "And the cases by sex alone."
+    },
+    {
+     "add": "group_table",
+     "as": "bySex"
+    },
+    {
+     "connect": {
+      "from": "cases",
+      "to": "bySex",
+      "port": "records"
+     }
+    },
+    {
+     "select": "bySex"
+    },
+    {
+     "click": "#configure-step",
+     "label": "Configure…",
+     "opens": "Total within groups"
+    },
+    {
+     "tick": "group-keep",
+     "label": "Key columns to keep",
+     "values": [
+      "Sex"
+     ],
+     "dialog": "Total within groups"
+    },
+    {
+     "choose": "group-aggregate",
+     "label": "Aggregate",
+     "value": "count",
+     "shown": "Count rows",
+     "dialog": "Total within groups"
+    },
+    {
+     "click": "#config-apply",
+     "label": "Apply",
+     "dialog": "Total within groups"
+    },
+    {
+     "add": "table_output",
+     "as": "sexes"
+    },
+    {
+     "connect": {
+      "from": "bySex",
+      "to": "sexes",
+      "port": "table"
+     }
+    },
+    {
+     "select": "sexes"
+    },
+    {
+     "fill": "table-label",
+     "label": "Results tab name",
+     "value": "Cases by sex"
+    },
+    {
+     "run": true
+    },
+    {
+     "see": "most cases under 5, in about equal numbers of boys and girls",
+     "check": "Cases by age and sex"
     }
    ]
   }
