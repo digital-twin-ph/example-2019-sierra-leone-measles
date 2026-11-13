@@ -45,7 +45,7 @@
      "select": "cases"
     },
     {
-     "click": "#open-table",
+     "click": "#configure-step",
      "label": "Configure…",
      "opens": "Tabular data"
     },
@@ -348,7 +348,7 @@
      "select": "cases"
     },
     {
-     "click": "#open-table",
+     "click": "#configure-step",
      "label": "Configure…",
      "opens": "Tabular data"
     },
@@ -935,7 +935,7 @@
      "select": "cases"
     },
     {
-     "click": "#open-table",
+     "click": "#configure-step",
      "label": "Configure…",
      "opens": "Tabular data"
     },
@@ -1012,7 +1012,7 @@
      "select": "people"
     },
     {
-     "click": "#open-table",
+     "click": "#configure-step",
      "label": "Configure…",
      "opens": "Tabular data"
     },
@@ -1483,7 +1483,7 @@
      "select": "cases"
     },
     {
-     "click": "#open-table",
+     "click": "#configure-step",
      "label": "Configure…",
      "opens": "Tabular data"
     },
