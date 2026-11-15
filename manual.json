@@ -472,7 +472,7 @@
      "run": true
     },
     {
-     "note": "Band each facility by its count. This file’s terms ask that a facility be mapped only where its count is large enough not to point at one child, so the band is also what decides which facilities are shown."
+     "note": "Band each facility by its count. The practitioner’s rule for this file is that a facility be mapped only where its count is large enough not to point at one child, so the band is also what decides which facilities are shown."
     },
     {
      "add": "apply_ruleset",

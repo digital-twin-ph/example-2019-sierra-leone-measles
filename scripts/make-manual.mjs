@@ -112,7 +112,7 @@ workflows.push({name:'Where were the cases seen?',steps:[
   ...steps.countBy({as:'byFacility',from:'cases',keep:[FACILITY,DISTRICT]}),
   {add:'table_output',as:'counts'},{connect:{from:'byFacility',to:'counts',port:'table'}},
   {run:true},
-  {note:'Band each facility by its count. This file’s terms ask that a facility be mapped only where its count is large enough not to point at one child, so the band is also what decides which facilities are shown.'},
+  {note:'Band each facility by its count. The practitioner’s rule for this file is that a facility be mapped only where its count is large enough not to point at one child, so the band is also what decides which facilities are shown.'},
   {add:'apply_ruleset',as:'bands'},{select:'bands'},
   {click:'#configure-step',label:'Configure…',opens:'Apply ruleset'},
   {choose:'ruleset-choice',label:'Ruleset',value:'authored',shown:'Write rules for this step',dialog:'Apply ruleset'},
