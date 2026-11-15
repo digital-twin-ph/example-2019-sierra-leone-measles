@@ -1,6 +1,6 @@
 # Measles in Sierra Leone, 2019 to 2023: a semi-synthetic teaching file
 
-A worked example for [Fieldwork](https://github.com/digital-twin-ph/fieldwork): five workflows over the data, built
+A worked example for [Fieldwork](https://github.com/digital-twin-ph/fieldwork): four workflows over the data, built
 from its manual.
 
 **This is not surveillance data, and no row is a person.** It is made from a measles line list that the Sierra Leone
@@ -82,7 +82,6 @@ a fixed commit.
 | Where were the cases seen? | The facility each case names, found in GRID3's register of Sierra Leone's health facilities (CC BY 4.0) by Find health facilities from a list. Facilities with fewer than ten cases are counted, not mapped; the rest are coloured by band, 10 to 49 or 50 or more. Seven names GRID3 holds under another type (MCHP or CHP where it writes CHP or CHC) are chosen in Find health facilities' Decisions, each the facility of that name in the case's district |
 | Where were cases most frequent for the people living there? | Cases per 100,000 people by district, over WorldPop's 2021 estimate, on OCHA's districts. The line list writes "Bo District" and OCHA "Bo", and Falaba is "Fabala": Relate drops the word District and allows for spelling, and shows each match before it is applied. Cases with no residential district are left out of the rates, and Relate says how many |
 | Who were the cases? | Cases by sex, and by age band and sex in one panel per sex: 0 (under one year), 1 to 4, 5 to 9, 10 to 14, 15 and over, as Apply ruleset bands the age in whole years. By sex: 1,310 male, 1,291 female, 5 not recorded. By band: 546, 1,329, 458, 102 and 164; the 7 cases with no age get no band, and are shown as such |
-| Were cases closer together in place and time than chance? | The space-time permutation scan (Kulldorff et al. 2005) at the facilities the second workflow maps, by week of the date seen, circles at most 25 km across. 1,382 cases at 41 facilities; cases with no residential district have no facility count and are left out, which Relate counts. The most likely cluster: 198 cases where 53.9 were expected, at 6 facilities within 24.5 km, 11 October 2021 to 3 April 2022, p = 0.001. Every reported cluster reaches p = 0.001: five years and over a thousand cases give a scan many. Each visit was moved by up to a week when the file was made, so a cluster's weeks are approximate |
 
 **Not yet:** the case classification by WHO's definition, which waits on the FETP's data dictionary for one column.
 
@@ -91,7 +90,7 @@ a fixed commit.
 For teaching: an epidemic curve, cases by district, the share meeting the case definition and with a lab result, and
 whether facility names can be matched to an open facility list. Maps should show counts by district, or by facility
 only where a count is large enough not to point at one child: **ten cases or more**, the practitioner's rule for this
-file (2026-11-15), which the facility map and the space-time scan both follow.
+file (2026-11-15), which the facility map follows.
 
 ## Source, terms and credit
 
