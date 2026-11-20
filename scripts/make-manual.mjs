@@ -23,7 +23,7 @@ const steps={
   importCases:as=>[
     {add:'table_input',as},{select:as},
     {click:'#configure-step',label:'Configure…',opens:'Tabular data'},
-    {click:'#table-remote summary',label:'Or fetch from a URL',dialog:'Tabular data'},
+    {click:'#table-tab-remote',label:'From an address',dialog:'Tabular data'},
     {fill:'table-url',label:'URL of a CSV, Stata file or zip',value:RAW+FILE,dialog:'Tabular data'},
     {click:'#table-fetch',label:'Fetch',dialog:'Tabular data'},
     {choose:'table-shape',label:'Shape of the file',value:'long',shown:'Long',dialog:'Tabular data'},
@@ -193,7 +193,7 @@ workflows.push({name:'Where were cases most frequent for the people living there
   {note:'Each district’s people: the 2021 Mid-Term Population and Housing Census (Source: STATISTICS SIERRA LEONE), by OCHA’s district. WorldPop’s modelled estimates are in the same file for comparison; WorldPop is 5.8% higher across the country.'},
   {add:'table_input',as:'people'},{select:'people'},
   {click:'#configure-step',label:'Configure…',opens:'Tabular data'},
-  {click:'#table-remote summary',label:'Or fetch from a URL',dialog:'Tabular data'},
+  {click:'#table-tab-remote',label:'From an address',dialog:'Tabular data'},
   {fill:'table-url',label:'URL of a CSV, Stata file or zip',value:RAW+'district-population.csv',dialog:'Tabular data'},
   {click:'#table-fetch',label:'Fetch',dialog:'Tabular data'},
   {choose:'table-shape',label:'Shape of the file',value:'long',shown:'Long',dialog:'Tabular data'},
