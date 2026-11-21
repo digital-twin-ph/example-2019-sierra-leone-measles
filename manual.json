@@ -1491,9 +1491,20 @@
      "select": "shaded"
     },
     {
+     "click": "#configure-step",
+     "label": "Configure…",
+     "opens": "Join a table to the study area"
+    },
+    {
      "choose": "join-key",
      "label": "Column naming each part",
-     "value": "group"
+     "value": "group",
+     "dialog": "Join a table to the study area"
+    },
+    {
+     "click": "#config-apply",
+     "label": "Apply",
+     "dialog": "Join a table to the study area"
     },
     {
      "add": "map_output",
